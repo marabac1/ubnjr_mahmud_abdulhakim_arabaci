@@ -22,7 +22,7 @@ func ChoiceAct(cha int) {
 		fmt.Println("Yanlış Giriş Yaptınız")
 	} else {
 		if cha == 1 {
-			Hw()
+			Hw(true)
 		} else if cha == 2 {
 			fmt.Printf("Karesi : %d\n", sq(rand.Intn(100)))
 		} else if cha == 3 {
@@ -35,8 +35,17 @@ func ChoiceAct(cha int) {
 	}
 }
 
-func Hw() {
-	println("Merhaba Dünya")
+func Hw(x bool) {
+	xSwitch := rand.Intn(2)
+	if xSwitch == 0 {
+		x = !x
+	}
+	if !x {
+		println("Merhaba Dünya")
+	} else {
+		println("Merhabayı kestim...")
+	}
+
 }
 func sq(x int) int {
 	fmt.Printf("Rasgele Sayınız %d\n", x)
